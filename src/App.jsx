@@ -19,7 +19,7 @@ const App = () => {
           <Route path='/features' element={<Features />} />
           <Route path='/pricing' element={<Pricing />} />
         </Routes>
-        {/* <Footer /> */}
+        <Footer />
       </div>
     </MyContext.Provider>
   );

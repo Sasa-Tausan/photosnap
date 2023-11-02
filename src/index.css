@@ -1,7 +1,7 @@
 /* ========== DESIGN SYSTEM ========== */
 :root {
   /* Colors */
-  --main-accent: (27deg, #ffc593 0%, #bc7198 43.29%, #5a77ff 83.33%);
+  --main-accent: 27deg, #ffc593 0%, #bc7198 43.29%, #5a77ff 83.33%;
   --pure-black: #000;
   --pure-white: #fff;
   --light-grey: #dfdfdf;
@@ -235,10 +235,10 @@ select {
 
   margin-inline: auto;
 
-  /* border: 1px solid darkgoldenrod; */
+  border: 1px solid darkgoldenrod;
 }
 
-/* ========== HEADER CLASSES ========== */
+/* ========== HEADER COMPONENT ========== */
 header {
   max-width: 1110px;
   width: 100%;
@@ -320,6 +320,41 @@ nav .active {
 
 .card {
   position: relative;
+
+  cursor: pointer;
+}
+
+.card:hover {
+  margin-top: -24px;
+}
+
+.card:hover .hover-element {
+  display: block;
+  bottom: 24px;
+}
+
+.card:hover .card-content {
+  bottom: 24px;
+}
+
+.hover-element {
+  position: absolute;
+
+  display: none;
+  width: 100%;
+  height: 6px;
+
+  background: linear-gradient(var(--main-accent));
+
+  bottom: 0;
+
+  z-index: 25;
+}
+
+.card-picture {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
 }
 
 .card::before {
@@ -369,6 +404,71 @@ nav .active {
   font-size: 0.875rem;
 }
 
+.features-section {
+  max-width: 1110px;
+  width: 100%;
+
+  padding-block: 7.5rem;
+  padding-inline: 1rem;
+
+  margin-inline: auto;
+}
+
+.features-list {
+  width: 100%;
+  justify-content: space-between;
+  align-items: stretch;
+  gap: 2rem;
+}
+
+.features-item {
+  align-items: center;
+  gap: 3rem;
+}
+
+.features-content {
+  gap: 1rem;
+  margin-top: auto;
+  text-align: center;
+}
+
+/* ========== FOOTER COMPONENT ========== */
+.footer-left-side {
+  border: 1px solid seagreen;
+}
+
+.logo-social-link-container {
+  justify-content: space-between;
+}
+
+.social-links-container {
+  gap: 1.5rem;
+}
+
+.social-link svg path {
+  fill: white;
+}
+
+.social-link:nth-child(1) svg path:hover {
+  fill: url(#a);
+}
+
+.social-link:nth-child(2) svg path:hover {
+  fill: url(#b);
+}
+
+.social-link:nth-child(3) svg path:hover {
+  fill: url(#c);
+}
+
+.social-link:nth-child(4) svg path:hover {
+  fill: url(#d);
+}
+
+.social-link:nth-child(5) svg path:hover {
+  fill: url(#e);
+}
+
 @media screen and (max-width: 950px) {
   /* ========== HOME COMPONENT ========== */
   .home-img-container,
@@ -407,6 +507,16 @@ nav .active {
 
     z-index: 10;
   }
+
+  .features-list {
+    flex-direction: column;
+    align-items: center;
+    gap: 5rem;
+  }
+
+  .features-item {
+    max-width: 450px;
+  }
 }
 
 @media screen and (max-width: 650px) {
@@ -421,5 +531,9 @@ nav .active {
 
   .hero-article {
     padding: 4.5rem 1.5rem;
+  }
+
+  .card-section {
+    grid-template-columns: 1fr;
   }
 }

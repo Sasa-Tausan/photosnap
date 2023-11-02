@@ -1,5 +1,9 @@
 import { Link } from 'react-router-dom';
-import { homePageData, storiesPageData } from '../assets/data';
+import {
+  featuresPageData,
+  homePageData,
+  storiesPageData,
+} from '../assets/data';
 import arrow from '../assets/shared/desktop/arrow.svg';
 import lightArrow from '../assets/shared/desktop/light-arrow.svg';
 
@@ -78,8 +82,11 @@ const Home = () => {
             } = item;
             return (
               <div key={index} className='card'>
-                <picture>{<img src={desktop} alt='' />}</picture>
-
+                <picture>
+                  <source media='(max-width:650px )' srcSet={mobile} />
+                  {<img src={desktop} alt='' className='card-picture' />}
+                </picture>
+                <div className='hover-element'></div>
                 <div className='card-content d-flex flex-col'>
                   <div className='d-flex flex-col'>
                     <p className='card-title text-clr-light bold'>{title}</p>
@@ -99,6 +106,24 @@ const Home = () => {
             );
           })}
       </section>
+      <div className='features-section'>
+        <ul className='features-list d-flex align-center'>
+          {featuresPageData
+            .filter((_, index) => index < 3)
+            .map((item, index) => {
+              const { img, title, text } = item;
+              return (
+                <li key={index} className='features-item d-flex flex-col'>
+                  <img src={img} alt='' />
+                  <div className='features-content d-flex flex-col text-clr-dark'>
+                    <h3 className='heading-three bold '>{title}</h3>
+                    <p className='body-text opacity-60'>{text}</p>
+                  </div>
+                </li>
+              );
+            })}
+        </ul>
+      </div>
     </main>
   );
 };
