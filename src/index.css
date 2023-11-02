@@ -235,7 +235,7 @@ select {
 
   margin-inline: auto;
 
-  border: 1px solid darkgoldenrod;
+  /* border: 1px solid darkgoldenrod; */
 }
 
 /* ========== HEADER COMPONENT ========== */
@@ -434,7 +434,7 @@ nav .active {
 
 /* ========== FOOTER COMPONENT ========== */
 .footer-left-side {
-  border: 1px solid seagreen;
+  gap: 7rem;
 }
 
 .logo-social-link-container {
@@ -467,6 +467,37 @@ nav .active {
 
 .social-link:nth-child(5) svg path:hover {
   fill: url(#e);
+}
+
+.footer-nav {
+  gap: 1.125rem;
+}
+
+.footer-text {
+  font-size: 0.875rem;
+
+  letter-spacing: 2px;
+
+  text-transform: uppercase;
+}
+
+.footer-right-side {
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.footer-cta {
+  gap: 1rem;
+}
+
+.footer-cta:hover {
+  text-decoration: underline;
+}
+
+.copyright-text {
+  font-size: 1rem;
+
+  opacity: 0.5;
 }
 
 @media screen and (max-width: 950px) {
@@ -516,6 +547,34 @@ nav .active {
 
   .features-item {
     max-width: 450px;
+  }
+
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+
+    gap: 5rem;
+  }
+
+  .footer-left-side {
+    flex-direction: column;
+
+    align-items: center;
+    gap: 3rem;
+  }
+
+  .footer-nav {
+    align-items: center;
+  }
+
+  .logo-social-link-container {
+    gap: 2rem;
+  }
+
+  .footer-right-side {
+    gap: 2rem;
+
+    align-items: center;
   }
 }
 
