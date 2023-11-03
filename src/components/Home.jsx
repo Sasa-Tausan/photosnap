@@ -9,7 +9,7 @@ import lightArrow from '../assets/shared/desktop/light-arrow.svg';
 
 const Home = () => {
   return (
-    <main className='home-page d-flex flex-col'>
+    <main className='full-width d-flex flex-col'>
       <section className='d-flex flex-col'>
         {homePageData.map((item, index) => {
           const {
@@ -22,19 +22,19 @@ const Home = () => {
           return (
             <article
               key={index}
-              className={` home-article d-flex  ${
+              className={` main-article d-flex  ${
                 isOddIndex ? 'row-reversed' : ''
               }`}
             >
               <div
-                className={`home-img-container ${
-                  isOddIndex && 'home-img-container-inverse'
+                className={`img-container ${
+                  isOddIndex && 'img-container-inverse'
                 }`}
               >
                 <picture>
-                  <source media='(max-width:375 )' srcSet={mobile} />
-                  <source media='(max-width: 650px)' srcSet={desktop} />
-                  <source media='(max-width:950px )' srcSet={tablet} />
+                  <source media='(max-width: 375px )' srcSet={mobile} />
+                  <source media='(max-width: 650px )' srcSet={desktop} />
+                  <source media='(max-width: 950px )' srcSet={tablet} />
                   <img src={desktop} alt='' />
                 </picture>
               </div>
@@ -106,7 +106,7 @@ const Home = () => {
             );
           })}
       </section>
-      <div className='features-section'>
+      <section className='features-section'>
         <ul className='features-list d-flex align-center'>
           {featuresPageData
             .filter((_, index) => index < 3)
@@ -123,7 +123,7 @@ const Home = () => {
               );
             })}
         </ul>
-      </div>
+      </section>
     </main>
   );
 };

@@ -22,7 +22,7 @@ const Footer = () => {
                 <NavLink
                   to={path}
                   key={index}
-                  className='footer-text text-clr-light bold'
+                  className=' fs-12 text-clr-light bold ls-2 uppercase'
                 >
                   {name}
                 </NavLink>
@@ -33,7 +33,7 @@ const Footer = () => {
         <div className='footer-right-side d-flex flex-col'>
           <Link
             to='pricing'
-            className='footer-cta footer-text d-flex align-center text-clr-light bold'
+            className='cta-content d-flex align-center gap-16 fs-12 text-clr-light bold ls-2 uppercase'
           >
             <span>get an invite</span>
             <img src={lightArrow} alt='' />

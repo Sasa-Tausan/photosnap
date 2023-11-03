@@ -43,7 +43,7 @@ body {
 
   background-color: var(--pure-white);
 
-  font-family: "DM Sans", sans-serif;
+  font-family: 'DM Sans', sans-serif;
 
   text-rendering: optimizeSpeed;
 
@@ -293,18 +293,14 @@ nav .active {
 }
 
 /* ========== HOME COMPONENT ========== */
-.home-page,
-.stories-page {
-  width: 100%;
-}
 
-.home-img-container,
-.home-img-container-inverse {
+.img-container,
+.img-container-inverse {
   width: 57%;
   display: flex;
   align-items: center;
 }
-.home-img-container-inverse {
+.img-container-inverse {
   justify-content: flex-end;
 }
 
@@ -374,18 +370,6 @@ nav .active {
   height: 100%;
 }
 
-.card::before {
-  position: absolute;
-  content: "";
-
-  width: 100%;
-  height: 100%;
-
-  z-index: 10;
-
-  background-color: rgba(0, 0, 0, 0.1);
-}
-
 .card-content {
   position: absolute;
 
@@ -435,6 +419,7 @@ nav .active {
   width: 100%;
   justify-content: space-between;
   align-items: stretch;
+
   gap: 2rem;
 }
 
@@ -443,10 +428,25 @@ nav .active {
   gap: 3rem;
 }
 
+.features-item img {
+  width: 72px;
+  height: 72px;
+  object-fit: contain;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .features-content {
   gap: 1rem;
-  margin-top: auto;
+  flex-grow: 1;
+  justify-content: flex-end;
+
   text-align: center;
+}
+
+.features-content .heading-three {
+  margin-top: auto;
 }
 
 /* ========== STORIES COMPONENT ========== */
@@ -468,6 +468,32 @@ nav .active {
   gap: 1rem;
 
   max-width: 400px;
+}
+
+/* ========== FEATURES COMPONENT ========== */
+.features-page-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 2rem;
+  row-gap: 6.25rem;
+
+  place-items: center;
+
+  align-items: start;
+}
+
+/* ========== BETA COMPONENT ========== */
+.beta-section {
+  background-image: url('../src/assets/shared/desktop/bg-beta.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+
+  padding-block: 4.25rem;
+}
+
+.beta-invite-content {
+  max-width: 30ch;
 }
 
 /* ========== FOOTER COMPONENT ========== */
@@ -511,24 +537,12 @@ nav .active {
   gap: 1.125rem;
 }
 
-.footer-text {
-  font-size: 0.875rem;
-
-  letter-spacing: 2px;
-
-  text-transform: uppercase;
-}
-
 .footer-right-side {
   justify-content: space-between;
   align-items: flex-end;
 }
 
-.footer-cta {
-  gap: 1rem;
-}
-
-.footer-cta:hover {
+.cta-content:hover {
   text-decoration: underline;
 }
 
@@ -540,8 +554,8 @@ nav .active {
 
 @media screen and (max-width: 950px) {
   /* ========== HOME COMPONENT ========== */
-  .home-img-container,
-  .home-img-container-inverse {
+  .img-container,
+  .img-container-inverse {
     width: 28%;
   }
 
@@ -551,6 +565,13 @@ nav .active {
 
   .card-section {
     grid-template-columns: 1fr 1fr;
+  }
+
+  /* ========== FEATURES COMPONENT ========== */
+  .features-page-list {
+    grid-template-columns: 1fr 1fr;
+
+    row-gap: 5rem;
   }
 }
 
@@ -614,14 +635,20 @@ nav .active {
 
     align-items: center;
   }
+
+  /* ========== BETA COMPONENT ========== */
+  .beta-section {
+    background-image: url('../src/assets/shared/tablet/bg-beta.jpg');
+  }
 }
 
 @media screen and (max-width: 650px) {
   /* ========== HOME COMPONENT ========== */
-  .home-article {
+  .main-article {
     flex-direction: column;
   }
-  .home-img-container,
+  .img-container,
+  .img-container-inverse,
   .hero-article {
     width: 100%;
   }
@@ -640,5 +667,23 @@ nav .active {
     width: 100%;
 
     background-color: var(--pure-black);
+  }
+
+  /* ========== FEATURES COMPONENT ========== */
+  .features-page-list {
+    grid-template-columns: 1fr;
+
+    row-gap: 3rem;
+  }
+
+  /* ========== BETA COMPONENT ========== */
+  .beta-section {
+    background-image: url('../src/assets/shared/mobile/bg-beta.jpg');
+  }
+
+  .beta-container {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.5rem;
   }
 }
