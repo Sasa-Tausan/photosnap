@@ -2,6 +2,8 @@ import appalaciaDesktop from "../assets/stories/desktop/moon-of-appalacia.jpg";
 import appalaciaTablet from "../assets/stories/tablet/moon-of-appalacia.jpg";
 import appalaciaMobile from "../assets/stories/mobile/moon-of-appalacia.jpg";
 import lightArrow from "../assets/shared/desktop/light-arrow.svg";
+import { storiesPageData } from "../assets/data";
+import { Link } from "react-router-dom";
 
 const Stories = () => {
   return (
@@ -38,6 +40,37 @@ const Stories = () => {
             </p>
           </div>
         </article>
+      </section>
+      <section className="card-section ">
+        {storiesPageData.map((item, index) => {
+          const {
+            title,
+            author,
+            images: { desktop, mobile },
+          } = item;
+          return (
+            <div key={index} className="card">
+              <picture>
+                <source media="(max-width:650px )" srcSet={mobile} />
+                {<img src={desktop} alt="" className="card-picture" />}
+              </picture>
+              <div className="hover-element"></div>
+              <div className="card-content d-flex flex-col">
+                <div className="d-flex flex-col">
+                  <p className="card-title text-clr-light bold">{title}</p>
+                  <p className="card-author text-clr-light bold">by {author}</p>
+                </div>
+                <hr className="card-divider" />
+                <Link className="card-cta d-flex align-center space-between">
+                  <p className="card-cta-title text-clr-light bold uppercase ls-2">
+                    read story
+                  </p>
+                  <img src={lightArrow} alt="" />
+                </Link>
+              </div>
+            </div>
+          );
+        })}
       </section>
     </main>
   );
