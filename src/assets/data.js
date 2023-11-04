@@ -286,3 +286,88 @@ const featuresPageData = [
 ];
 
 export { featuresPageData };
+
+const pricingPageData = [
+  {
+    name: 'basic',
+    monthly: '19.00',
+    yearly: '190.00',
+    description:
+      'Includes basic usage of our platform. Recommended for new and aspiring photographers.',
+  },
+  {
+    name: 'pro',
+    monthly: '39.00',
+    yearly: '390.00',
+    description:
+      'More advanced features available. Recommended for photography veterans and professionals.',
+  },
+  {
+    name: 'business',
+    monthly: '99.00',
+    yearly: '990.00',
+    description:
+      'Additional features available such as more detailed metrics. Recommended for business owners.',
+  },
+];
+
+export { pricingPageData };
+
+const compareTableData = [
+  {
+    feature: 'the features',
+    basic: 'basic',
+    pro: 'pro',
+    business: 'business',
+  },
+  {
+    feature: 'unlimited story posting',
+    basic: true,
+    pro: true,
+    business: true,
+  },
+  {
+    feature: 'unlimited photo upload',
+    basic: true,
+    pro: true,
+    business: true,
+  },
+  {
+    feature: 'embedding custom content',
+    basic: false,
+    pro: true,
+    business: true,
+  },
+  {
+    feature: 'customize metada',
+    basic: false,
+    pro: true,
+    business: true,
+  },
+  {
+    feature: 'advanced metrics',
+    basic: false,
+    pro: false,
+    business: true,
+  },
+  {
+    feature: 'photo downloads',
+    basic: false,
+    pro: false,
+    business: true,
+  },
+  {
+    feature: 'search engine indexing',
+    basic: false,
+    pro: false,
+    business: true,
+  },
+  {
+    feature: 'custom analytics',
+    basic: false,
+    pro: false,
+    business: true,
+  },
+];
+
+export { compareTableData };

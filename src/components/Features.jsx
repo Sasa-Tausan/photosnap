@@ -2,7 +2,7 @@ import heroDesktop from '../assets/features/desktop/hero.jpg';
 import heroTablet from '../assets/features/tablet/hero.jpg';
 import heroMobile from '../assets/features/mobile/hero.jpg';
 import { featuresPageData } from '../assets/data';
-import { Beta } from './Beta';
+import Beta from './Beta';
 
 const Features = () => {
   return (
